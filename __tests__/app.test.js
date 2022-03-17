@@ -11,16 +11,16 @@ describe('quotable routes', () => {
   afterAll(() => {
     pool.end();
   });
-
+  
+  
   it('should create a new profile with a random quote', async () => {
     const res = await request(app)
       .post('/api/v1/profiles')
       .send({ name: 'Test User' });
-
-    expect(res.body).toEqual({
-      id: expect.any(String),
-      name: 'Test User',
-      quote: expect.any(String),
-    });
+      expect(res.body).toEqual({
+        id: expect.any(String),
+        name: 'Test User',
+        quote: expect.any(String),
+      });
   });
 });
